@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome kit -->
+    <script
+      src="https://kit.fontawesome.com/fe44cdec3d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Fav icon and title -->
+    <link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+    <title>Bankist</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-wrapper row-flex hidden">
+        <h2 class="header-title">Login to continue</h2>
+        <img class="header-logo" src="img/logo.png" alt="logo" />
+        <form class="login row-flex">
+          <p class="help">Help</p>
+          <input
+            class="login-input user-name focus"
+            type="text"
+            placeholder="User Name"
+          />
+          <input
+            class="login-input pin focus"
+            type="text"
+            placeholder="PIN"
+            maxlength="4"
+          />
+          <button class="btn login-btn row-flex focus">&rarr;</button>
+        </form>
+      </div>
+
+      <button class="menu btn">
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+    </header>
+    <main class="app">
+      <!-- Appears after login -->
+      <!-- Balance -->
+      <div class="balance row-flex">
+        <div class="current-balance column-flex">
+          <h3>Current Balance</h3>
+          <p class="balance-date">As of 10/08/2022 15:32</p>
+        </div>
+        <p class="balance-value">0 000,00 $</p>
+      </div>
+      <!-- Movments -->
+      <div class="movments"></div>
+      <!-- Operation -->
+      <div class="operations column-flex">
+        <div class="operation transfer">
+          <h3 class="operation-title">Transfer money</h3>
+          <form class="operation-form operation-form--transfer">
+            <input class="operation-input focus" type="text" id="transfer" />
+            <input
+              class="operation-input focus"
+              type="number"
+              id="transfer-amount"
+            />
+            <button
+              class="btn operation-button operation-button--transfer focus"
+            >
+              &rarr;
+            </button>
+            <label class="operation-label focus" for="transfer"
+              >Transfer to</label
+            >
+            <label class="operation-label focus" for="transfer-amount"
+              >Amount</label
+            >
+          </form>
+        </div>
+        <div class="operation loan">
+          <h3 class="operation-title">Request loan</h3>
+          <form class="operation-form operation-form--loan">
+            <input
+              class="operation-input focus"
+              type="number"
+              id="loan-amount"
+            />
+            <button class="btn operation-button operation-button--loan focus">
+              &rarr;
+            </button>
+            <label class="operation-label focus" for="loan-amount"
+              >Amount</label
+            >
+          </form>
+        </div>
+        <div class="operation close-account">
+          <h3 class="operation-title">Close account</h3>
+          <form class="operation-form">
+            <input
+              class="operation-input focus"
+              type="text"
+              id="confirm-user"
+            />
+            <input
+              class="operation-input operation-input--pin focus"
+              type="password"
+              id="confirm-pin"
+            />
+            <button class="btn operation-button operation-button--close focus">
+              &rarr;
+            </button>
+            <label class="operation-label focus" for="confirm-user"
+              >Confirm user</label
+            >
+            <label class="operation-label focus" for="confirm-pin"
+              >Confirm pin</label
+            >
+          </form>
+        </div>
+      </div>
+      <div class="summery row-flex">
+        <div class="summery-item row-flex">
+          <p class="summery-lable">IN</p>
+          <p class="summery-value summery-value--green summery--deposit">
+            000$
+          </p>
+        </div>
+        <div class="summery-item row-flex">
+          <p class="summery-lable">OUT</p>
+          <p class="summery-value summery-value--red summery--withdrawal">
+            000$
+          </p>
+        </div>
+        <div class="summery-item row-flex">
+          <p class="summery-lable">INTEREST</p>
+          <p class="summery-value summery-value--green summery--interest">
+            000$
+          </p>
+        </div>
+        <button class="btn sort-btn focus">&downarrow; SORT</button>
+      </div>
+      <div class="timer">
+        <p>You will be logged out in <span class="time"></span></p>
+      </div>
+    </main>
+    <!--background before login -->
+    <figure class="before-login-bg column-flex">
+      <img src="img/logo.png" alt="" />
+      <figcaption figcaption>Bankist</figcaption>
+    </figure>
+    <!-- Modal -->
+    <div class="modal">
+      <div class="message">
+        <h3 class="modal-title">
+          This is an exercise project. For login use below information:
+        </h3>
+        <ul>
+          <li>user name : js -----pin : 1111</li>
+          <li>user name : jd ----- pin : 2222</li>
+          <li>user name : stw ---- pin : 3333</li>
+          <li>user name : ss ----- pin : 4444</li>
+        </ul>
+        <p>For Transfering mony to an account use its 'user name'</p>
+        <p>
+          For getting Loan, you have to have a deposit more than 10% of the loan
+          amount
+        </p>
+        <i class="close-icon fa-solid fa-xmark"></i>
+      </div>
+      <div class="overlay"></div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <!-- ion icon -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
